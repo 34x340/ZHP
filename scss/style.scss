@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.header {
+    width: 100%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 5%;
+
+    &__logo {
+        font-family: 'Inter', sans-serif;
+        font-weight: 900;
+        font-size: 20px;
+    }
+}
+
+.nav-list {
+    display: flex;
+    gap: 40px;
+    list-style: none; // ВОТ ТУТ ОНО ТОЧНО СРАБОТАЕТ
+    margin: 0;
+    padding: 0;
+
+    &__item { // Превратится в .nav-list__item
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        font-weight: 200;
+        color: rgb(139, 139, 139);
+        cursor: pointer;
+        transition: 1s;
+
+        &:hover {
+            color: #ff00d0
+        }
+    }
+}
+
+$text-color: #000; // Весь текст только черный
+
+.hero {
+    width: 100%;
+    padding: 139px 50px;
+    margin-bottom: 200px;
+
+    &__container {
+        max-width: 1440px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__title {
+        font-family: 'Inter', sans-serif;
+        font-size: clamp(80px, 15vw, 200px);
+        font-weight: 400;
+        color: #000;
+        line-height: 0.8;
+        margin: 0;
+        letter-spacing: -0.05em;
+        transition: 1s;
+
+        &:hover {
+            color: #ff00d0;
+        }
+    }
+
+
+    .info-block {
+        margin-left: 16px; 
+        margin-top: 36px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        &__value {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+            color: #000;
+            text-transform: uppercase;
+        }
+
+    }
+
+    &__graffiti {
+        font-family: 'Lacquer', cursive;
+        font-size: clamp(40px, 8vw, 84px);
+        color: #000;
+        margin-left: 615px; 
+        margin-top: -50px; // Дистанция от инфо-блока
+        
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        
+        // Чтобы тень не обрезалась, даем запас
+        padding: 20px 0;
+    }
+}
+
+.case-study {
+    width: 100%;
+    min-height: 100px;
+    padding: 100px 5%;
+    
+    // Твой фон с градиентом и картинкой
+    background: linear-gradient(0deg, rgba(26, 26, 26, 0.7) 0%, rgba(26, 26, 26, 0.7) 100%), 
+                url('../img/xymera-bg.png') lightgray no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &__container {
+        max-width: 1440px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; // Все по левому краю
+    }
+
+    &__title {
+        // Стили из твоего запроса
+        color: #FFF;
+        text-shadow: 0 0 40px rgba(255, 255, 255, 0.25);
+        font-family: 'Lacquer', cursive;
+        font-size: 64px;
+        font-weight: 400;
+        line-height: normal;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    &__desc {
+        // Стили из твоего запроса
+        color: #FFF;
+        text-shadow: 0 0 40px rgba(255, 255, 255, 0.25);
+        font-family: 'Poiret One', cursive;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: normal;
+        max-width: 800px;
+        margin-bottom: 60px;
+    }
+
+    // Убираем дефолтные стили списков
+    &__posters, &__mockups {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap; // Чтобы переносились, если не влазят
+        gap: 20px;
+        width: 100%;
+        margin-bottom: 40px;
+        padding: 0;
+    }
+
+    &__item {
+        flex: 1 1 calc(25% - 20px); // 4 в ряд
+        min-width: 250px;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+        }
+
+    }
+
+    // Если мокапы (на стенах) должны быть крупнее, можно сделать их 2 в ряд
+    &__mockups {
+        .case-study__item {
+            flex: 1 1 calc(50% - 20px); // 2 в ряд
+        }
+    }
+    
+    // Прячем лишнюю картинку из HTML, если ты её там оставил
+    &__bg {
+        display: none;
+    }
+}
+
+.pricing {
+   width: 100%;
+    background-color: #fff;
+    padding: 40px 50px 100px;
+    margin-top: 150px;
+
+    // --- ЯРУС 1 ---
+    &__container {
+        max-width: 1440px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__header {
+        display: flex;
+        align-items: baseline; // Чтобы баксы стояли на одной линии с текстом
+        gap: 30px;
+        margin-bottom: 80px;
+    }
+
+    &__title {
+        font-family: 'Inter', sans-serif;
+        font-size: 128px;
+        font-weight: 400;
+        line-height: 0.8;
+        margin: 0;
+    }
+
+    &__dollars {
+        font-family: 'Lacquer', cursive;
+        font-size: 200px;
+        color: #009914;
+        line-height: 1;
+    }
+
+    // --- ЯРУС 2 ---
+    &__images {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        gap: 80px;
+        margin-left: 200px; 
+        margin-bottom: 100px;
+        margin-top: 163px;
+    }
+
+    &__image-item {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; // Центрирует и фото, и текст внутри колонки
+        gap: 20px;
+        align-items: center
+
+        img {
+            max-width: 500px; // Настрой под макет, если надо
+            height: auto;
+            display: block;
+        }
+
+        p {
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 400;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 0; // Убираем дефолтные отступы
+        }
+
+        .label-dark { color: #430304; }
+        .label-olive { color: #514B33; }
+    }
+}
+
+.outro {
+    width: 100%;
+    padding: 150px 50px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+
+    &__container {
+        max-width: 1440px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        text-align: center;
+    }
+
+    &__title {
+        font-family: 'Lacquer', cursive;
+        font-size: clamp(60px, 12vw, 180px); // Огромный, но чтобы влез
+        color: #000;
+        line-height: 0.8;
+        margin: 0;
+        text-transform: uppercase;
+        margin-bottom: 150px;
+        transition: color 0.5s ease;
+
+        &:hover {
+            color: #ff00d0; // Твой любимый розовый
+        }
+    }
+
+    &__text {
+        font-family: 'Inter', sans-serif;
+        font-size: 32px;
+        font-weight: 400;
+        color: #000;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-top: 30px; // Отступ от заголовка
+    }
+}
