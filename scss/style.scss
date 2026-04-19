@@ -9,6 +9,14 @@ html, body {
     width: 100%;
 }
 
+html {
+    scroll-behavior: smooth;
+    
+    // Если у тебя фиксированная шапка (sticky header), 
+    // добавь этот отступ, чтобы заголовок не заезжал ПОД шапку:
+    scroll-padding-top: 100px; 
+}
+
 .header {
     width: 100%; 
     display: flex;
@@ -38,8 +46,21 @@ html, body {
         cursor: pointer;
         transition: 1s;
 
+        // Стили для ссылки внутри пункта меню
+        a {
+            text-decoration: none; // Убираем подчеркивание
+            color: inherit;       // Забираем серый цвет у родителя (li)
+            font-weight: inherit; // Забираем вес 200
+        }
+
         &:hover {
-            color: #ff00d0
+            color: #ff00d0;
+            
+            // Если внутри есть ссылка, она тоже станет розовой за счет inherit,
+            // но для верности можно прописать явно:
+            a {
+                color: #ff00d0;
+            }
         }
     }
 }
@@ -281,7 +302,61 @@ $text-color: #000;
         }
     }
 }
+.about {
+    width: 100%;
+    background-color: #fff;
+    padding: 100px 50px;
+    margin-top: 100px;
+    margin-bottom: 400px;
 
+    &__container {
+        max-width: 1440px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; // Заголовок и фото по левому краю
+        gap: 60px;
+    }
+
+    &__title {
+        font-family: 'Inter', sans-serif;
+        font-size: 128px; // Тот же кегль, что и в PRICING
+        font-weight: 400;
+        line-height: 1;
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+    &__image {
+        width: 100%;
+        max-width: 700px; // Залочил ширину фотки, чтобы она не была гигантской на десктопе
+        
+        img {
+            width: 100%; // Фотка теперь резиновая
+            height: auto;
+            display: block;
+            // Можно добавить легкую тень или фильтр, если захочешь
+            object-fit: cover;
+        }
+    }
+
+    // --- АДАПТИВ ДЛЯ МОБИЛОК ---
+    @media (max-width: 768px) {
+        padding: 60px 20px;
+
+        &__container {
+            gap: 40px;
+        }
+
+        &__title {
+            font-size: 80px; // Уменьшаем ME:, чтобы не вылетало
+        }
+
+        &__image {
+            max-width: 100%; // На мобилках фотка на всю ширину экрана
+        }
+    }
+}
 .outro {
     width: 100%;
     padding: 150px 50px;
