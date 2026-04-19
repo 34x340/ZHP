@@ -26,11 +26,11 @@ html, body {
 .nav-list {
     display: flex;
     gap: 40px;
-    list-style: none; // ВОТ ТУТ ОНО ТОЧНО СРАБОТАЕТ
+    list-style: none;
     margin: 0;
     padding: 0;
 
-    &__item { // Превратится в .nav-list__item
+    &__item {
         font-family: 'Inter', sans-serif;
         font-size: 14px;
         font-weight: 200;
@@ -44,7 +44,7 @@ html, body {
     }
 }
 
-$text-color: #000; // Весь текст только черный
+$text-color: #000; 
 
 .hero {
     width: 100%;
@@ -97,13 +97,12 @@ $text-color: #000; // Весь текст только черный
         font-size: clamp(40px, 8vw, 84px);
         color: #000;
         margin-left: 615px; 
-        margin-top: -50px; // Дистанция от инфо-блока
+        margin-top: -50px; 
         
         letter-spacing: 0.1em;
         text-transform: uppercase;
         white-space: nowrap;
         
-        // Чтобы тень не обрезалась, даем запас
         padding: 20px 0;
     }
 }
@@ -113,7 +112,6 @@ $text-color: #000; // Весь текст только черный
     min-height: 100px;
     padding: 100px 5%;
     
-    // Твой фон с градиентом и картинкой
     background: linear-gradient(0deg, rgba(26, 26, 26, 0.7) 0%, rgba(26, 26, 26, 0.7) 100%), 
                 url('../img/xymera-bg.png') lightgray no-repeat;
     background-size: cover;
@@ -124,11 +122,10 @@ $text-color: #000; // Весь текст только черный
         margin: 0 auto;
         display: flex;
         flex-direction: column;
-        align-items: flex-start; // Все по левому краю
+        align-items: flex-start;
     }
 
     &__title {
-        // Стили из твоего запроса
         color: #FFF;
         text-shadow: 0 0 40px rgba(255, 255, 255, 0.25);
         font-family: 'Lacquer', cursive;
@@ -140,7 +137,6 @@ $text-color: #000; // Весь текст только черный
     }
 
     &__desc {
-        // Стили из твоего запроса
         color: #FFF;
         text-shadow: 0 0 40px rgba(255, 255, 255, 0.25);
         font-family: 'Poiret One', cursive;
@@ -151,11 +147,10 @@ $text-color: #000; // Весь текст только черный
         margin-bottom: 60px;
     }
 
-    // Убираем дефолтные стили списков
     &__posters, &__mockups {
         list-style: none;
         display: flex;
-        flex-wrap: wrap; // Чтобы переносились, если не влазят
+        flex-wrap: wrap;
         gap: 20px;
         width: 100%;
         margin-bottom: 40px;
@@ -163,7 +158,7 @@ $text-color: #000; // Весь текст только черный
     }
 
     &__item {
-        flex: 1 1 calc(25% - 20px); // 4 в ряд
+        flex: 1 1 calc(25% - 20px); 
         min-width: 250px;
 
         img {
@@ -176,14 +171,12 @@ $text-color: #000; // Весь текст только черный
 
     }
 
-    // Если мокапы (на стенах) должны быть крупнее, можно сделать их 2 в ряд
     &__mockups {
         .case-study__item {
             flex: 1 1 calc(50% - 20px); // 2 в ряд
         }
     }
-    
-    // Прячем лишнюю картинку из HTML, если ты её там оставил
+
     &__bg {
         display: none;
     }
@@ -202,12 +195,11 @@ $text-color: #000; // Весь текст только черный
         gap: 80px;
     }
 
-    // HEADER
     &__header {
         display: flex;
         align-items: center;
         gap: 40px;
-        flex-wrap: wrap; // фикс переполнения
+        flex-wrap: wrap; 
     }
 
     &__title {
@@ -236,7 +228,7 @@ $text-color: #000; // Весь текст только черный
         display: flex;
         justify-content: center;
         gap: 60px;
-        flex-wrap: wrap; // теперь не ломается
+        flex-wrap: wrap; 
     }
 
     &__image-item {
@@ -267,7 +259,6 @@ $text-color: #000; // Весь текст только черный
         .label-olive { color: #514B33; }
     }
 
-    // TABLET
     @media (max-width: 1024px) {
         padding: 60px 20px;
 
@@ -282,7 +273,6 @@ $text-color: #000; // Весь текст только черный
         }
     }
 
-    // MOBILE
     @media (max-width: 480px) {
         padding: 40px 16px;
 
@@ -291,6 +281,7 @@ $text-color: #000; // Весь текст только черный
         }
     }
 }
+
 .outro {
     width: 100%;
     padding: 150px 50px;
@@ -308,7 +299,7 @@ $text-color: #000; // Весь текст только черный
 
     &__title {
         font-family: 'Lacquer', cursive;
-        font-size: clamp(60px, 12vw, 180px); // Огромный, но чтобы влез
+        font-size: clamp(60px, 12vw, 180px); 
         color: #000;
         line-height: 0.8;
         margin: 0;
@@ -317,7 +308,7 @@ $text-color: #000; // Весь текст только черный
         transition: color 0.5s ease;
 
         &:hover {
-            color: #ff00d0; // Твой любимый розовый
+            color: #ff00d0; 
         }
     }
 
@@ -328,6 +319,6 @@ $text-color: #000; // Весь текст только черный
         color: #000;
         text-transform: uppercase;
         letter-spacing: 0.1em;
-        margin-top: 30px; // Отступ от заголовка
+        margin-top: 30px;
     }
 }
