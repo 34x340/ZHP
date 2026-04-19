@@ -158,58 +158,61 @@ html, body {
 .pricing {
   width: 100%;
   background-color: #fff;
-  padding: 40px 50px 100px;
-  margin-top: 150px;
+  padding: 100px 50px;
 }
 .pricing__container {
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  gap: 80px;
 }
 .pricing__header {
   display: flex;
-  align-items: baseline;
-  gap: 30px;
-  margin-bottom: 80px;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 .pricing__title {
   font-family: "Inter", sans-serif;
-  font-size: 128px;
+  font-size: clamp(40px, 10vw, 128px);
   font-weight: 400;
-  line-height: 0.8;
+  line-height: 0.9;
   margin: 0;
+  max-width: 100%;
 }
 .pricing__dollars {
   font-family: "Lacquer", cursive;
-  font-size: 200px;
+  font-size: clamp(60px, 15vw, 200px);
   color: #009914;
-  line-height: 1;
+  line-height: 0.9;
+  margin: 0;
 }
 .pricing__images {
   list-style: none;
   padding: 0;
+  margin: 0;
   display: flex;
-  flex-direction: row;
-  gap: 80px;
-  margin-left: 200px;
-  margin-bottom: 100px;
-  margin-top: 163px;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
 }
 .pricing__image-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  align-items: center img;
-  align-items-max-width: 500px;
-  align-items-height: auto;
-  align-items-display: block;
+  width: 100%;
+  max-width: 450px;
+}
+.pricing__image-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 24px;
 }
 .pricing__image-item p {
   font-family: "Inter", sans-serif;
-  font-size: 24px;
+  font-size: clamp(16px, 2vw, 24px);
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
@@ -220,6 +223,27 @@ html, body {
 }
 .pricing__image-item .label-olive {
   color: #514B33;
+}
+@media (max-width: 1024px) {
+  .pricing {
+    padding: 60px 20px;
+  }
+  .pricing__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .pricing__images {
+    gap: 40px;
+  }
+}
+@media (max-width: 480px) {
+  .pricing {
+    padding: 40px 16px;
+  }
+  .pricing__images {
+    gap: 30px;
+  }
 }
 
 .outro {

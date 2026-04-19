@@ -190,81 +190,107 @@ $text-color: #000; // Весь текст только черный
 }
 
 .pricing {
-   width: 100%;
+    width: 100%;
     background-color: #fff;
-    padding: 40px 50px 100px;
-    margin-top: 150px;
+    padding: 100px 50px;
 
-    // --- ЯРУС 1 ---
     &__container {
         max-width: 1440px;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        gap: 80px;
     }
 
+    // HEADER
     &__header {
         display: flex;
-        align-items: baseline; // Чтобы баксы стояли на одной линии с текстом
-        gap: 30px;
-        margin-bottom: 80px;
+        align-items: center;
+        gap: 40px;
+        flex-wrap: wrap; // фикс переполнения
     }
 
     &__title {
         font-family: 'Inter', sans-serif;
-        font-size: 128px;
+        font-size: clamp(40px, 10vw, 128px);
         font-weight: 400;
-        line-height: 0.8;
+        line-height: 0.9;
         margin: 0;
+        max-width: 100%;
     }
 
     &__dollars {
         font-family: 'Lacquer', cursive;
-        font-size: 200px;
+        font-size: clamp(60px, 15vw, 200px);
         color: #009914;
-        line-height: 1;
+        line-height: 0.9;
+        margin: 0;
     }
 
-    // --- ЯРУС 2 ---
+    // CARDS
     &__images {
         list-style: none;
         padding: 0;
+        margin: 0;
+
         display: flex;
-        flex-direction: row;
-        gap: 80px;
-        margin-left: 200px; 
-        margin-bottom: 100px;
-        margin-top: 163px;
+        justify-content: center;
+        gap: 60px;
+        flex-wrap: wrap; // теперь не ломается
     }
 
     &__image-item {
         display: flex;
-        flex-direction: column; 
-        align-items: center; // Центрирует и фото, и текст внутри колонки
-        gap: 20px;
-        align-items: center
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+        max-width: 450px;
 
         img {
-            max-width: 500px; // Настрой под макет, если надо
+            width: 100%;
             height: auto;
             display: block;
+            margin-bottom: 24px;
         }
 
         p {
             font-family: 'Inter', sans-serif;
-            font-size: 24px;
+            font-size: clamp(16px, 2vw, 24px);
             font-weight: 400;
             text-transform: uppercase;
             text-align: center;
-            margin: 0; // Убираем дефолтные отступы
+            margin: 0;
         }
 
         .label-dark { color: #430304; }
         .label-olive { color: #514B33; }
     }
-}
 
+    // TABLET
+    @media (max-width: 1024px) {
+        padding: 60px 20px;
+
+        &__header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        &__images {
+            gap: 40px;
+        }
+    }
+
+    // MOBILE
+    @media (max-width: 480px) {
+        padding: 40px 16px;
+
+        &__images {
+            gap: 30px;
+        }
+    }
+}
 .outro {
     width: 100%;
     padding: 150px 50px;
